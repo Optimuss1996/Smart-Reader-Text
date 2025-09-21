@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-
+import { escapeRegExp } from "../utils/escapeRegex";
 interface HighlightedTextProps {
   text: string;
   highlight: string;
@@ -21,9 +21,6 @@ const HighlightedText: React.FC<HighlightedTextProps> = ({
       }
     }, 100);
   }, [highlight]);
-
-  const escapeRegExp = (str: string) =>
-    str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
   if (!highlight.trim()) return <>{text}</>;
 

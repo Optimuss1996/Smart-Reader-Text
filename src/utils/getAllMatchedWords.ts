@@ -1,6 +1,6 @@
 import { escapeRegExp } from "./escapeRegex";
 
-// استخراج کلمات پیشنهادی
+// extract suggested words
 export const getAllMatchedWords = (text: string, search: string) => {
   const escaped = escapeRegExp(search.trim());
   if (!escaped) return [];
